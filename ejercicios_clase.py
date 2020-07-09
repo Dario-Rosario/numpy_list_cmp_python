@@ -25,6 +25,10 @@ def ej1():
     # Realizar una funcion lambda que eleve al cuadrado
     # el número pasado como parámetro
 
+    numero = 2
+    numero_cuadrado = lambda numero: numero**2
+    print("El resultado de elevar",numero, "al cuadrado es:",numero_cuadrado(numero))
+
     # potencia_2 = lambda x:......
 
     # List de string
@@ -52,9 +56,17 @@ def ej2():
 
     # len_string = lambda......
 
+    palabra = str(input("Escriba una palabra \n"))
+
+    len_palabra = lambda palabra: len(palabra)
+    print("El tamaño de la palabra ingresada es de", len_palabra(palabra), "letras")
+
     # 2)
     # List de string
     palabras = ['Inove', 'casa', 'programacion']
+
+    len_palabras = list(map( lambda i: len(i), palabras))
+    print(len_palabras)
 
     # Utilice la función map para mapear una lambda expression
     # que retorne el tamaño (len) de cada texto em cata iteración
@@ -173,9 +185,9 @@ def ej6():
 
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
-    ej1()
-    # ej2()
-    # ej3()
+    #ej1()
+    #ej2()
+    ej3()
     # ej4()
     # ej5()
     # ej6()
