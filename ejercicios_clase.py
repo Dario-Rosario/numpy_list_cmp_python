@@ -29,6 +29,8 @@ def ej1():
 
     # List de string
     numeros = [1, -5, 4, 3]
+    potencia = list(map(lambda x: x**2, numeros))
+    print(potencia)
 
     # 2)
     # Utilice la función map para mapear una lambda expression
