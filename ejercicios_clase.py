@@ -17,6 +17,7 @@ __version__ = "1.1"
 
 import numpy as np
 import math
+import random
 
 
 def ej1():
@@ -87,6 +88,13 @@ def ej3():
     # números, conteniendo del 0 al 10 inclusive
 
     # lista_0_10 = [......]
+    numero = 11
+
+    lista = list(range(numero)) #para probar y comparar
+    print(lista)
+
+    v1 = np.arange(numero)
+    print("La lista de", numero, "es:", v1)
 
     # 2)
     # Generar una lista a partir de comprensión de listas,
@@ -97,6 +105,11 @@ def ej3():
     # Utilizar comprensión de listas para generar essa lista
 
     # tabla_5 = [......]
+    multiplo = 11
+    v5 = np.arange(multiplo)
+    v_multiplo = [5]
+    tabla_5 = v5 * v_multiplo
+    print(tabla_5)
 
     # 3)
     # Generar una lista a partir de comprensión de listas,
@@ -105,11 +118,15 @@ def ej3():
     # números posibles de un mes (los números pueden repetirse)
 
     # dias_mes = [.....]
+    lista = []
+    lista = [random.randint(1,30) for i in range(10)]
+    print("Lista de 10 numeros aleatorios entre 1 y 30:", lista)
 
     pass
 
 
 def ej4():
+
     # Utilizar comprensión de listas con condicionales
 
     # 1)
@@ -120,6 +137,8 @@ def ej4():
     # que no son números, utilizar condicionales para detectarlos
     # reemplazar dicho str "no numérico" por 0
     list_numeros_str = ['5', '-2', '3', '', '7', 'NaN']
+    lista_numeros_int = [int(x) for x in list_numeros_str if x.get("x",0)]
+    print(lista_numeros_int)
 
     # lista_numeros_int = [.....]
 
@@ -140,6 +159,9 @@ def ej5():
     # De la lista resultante informar cuantas personas/personal
     # comprendido en dicho rango pasó por ese molinete
 
+    personal_1_10 = [x for x in accesos if x > 0 and x <= 10]
+    print("ID entre 1 y 10:", personal_1_10)
+    print("El numero de personas que pasa es:", len(personal_1_10))
     # personal_1_10 = [.....]
 
     # 2)
@@ -152,6 +174,8 @@ def ej5():
     # TIP: Utilizar el operador "in" para chequear si un ID de accesos está
     # dentro de "id_validos"
 
+    personal_valido = [x for x in id_validos if x in accesos]
+    print(personal_valido)
     # personal_valido = [.....]
     pass
 
@@ -162,15 +186,22 @@ def ej6():
     # el cual este acotado entre 0 y 1000
     # De dicho array calcular las siguientes operaciones:
 
+    rango = 1000
+    lista_ej6 = np.arange(rango)
+
     # 1)
     # Calcular la suma de todos los elementos en el array
 
+    suma = np.sum(lista_ej6)
+    print("La suma del rango seleccionado es:", suma)
     # suma = ....
 
     # 2)
     # Calcular la diferencia de todos los elementos en el array
 
     # diferencia = ....
+    diferencia = np.diff(lista_ej6) 
+    
 
     # 3)
     # Utilizar la funcion "where" para reemplazar los números múltiplos
@@ -180,6 +211,8 @@ def ej6():
     # bastante para saber si un número es múltiplo de "2"
 
     # nuevo_array = ....
+    nuevo_array = (np.where(lista_ej6 % 5, lista_ej6, 0))
+
     pass
 
 
@@ -187,7 +220,7 @@ if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
     #ej1()
     #ej2()
-    ej3()
-    # ej4()
-    # ej5()
-    # ej6()
+    #ej3()
+    ej4()
+    #ej5()
+    #ej6()

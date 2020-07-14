@@ -16,10 +16,20 @@ __email__ = "alumnos@inove.com.ar"
 __version__ = "1.1"
 
 import numpy as np
+import random
+import math
 
 
 def ej1():
     print('Comenzamos a divertirnos!')
+
+    while True:
+
+        lista = [random.randint(1,10) for x in range(3)]
+        suma_lista = sum(lista)
+        if suma_lista <= 21:
+            print("La suma de la lista", lista, "es", suma_lista)
+            break
 
     '''
     Empecemos a jugar con las listas y su métodos, el objetivo
@@ -40,6 +50,9 @@ def ej1():
         condicion "a"
 
     Realizar este proceso iterativo hasta cumplir el objetivo
+
+    
+
     '''
 
 
@@ -51,7 +64,7 @@ def ej2():
     obtener una nueva lista filtrada que llamaremos "nombres_filtrados"
     La lista se debe filtrar por comprensión de listas utilizando la
     lista "padron" como parámetro.
-    La lista filtrada sodo deberá tener aquellos nombres que empiecen
+    La lista filtrada solo deberá tener aquellos nombres que empiecen
     con alguna de las letras aceptadas en el "padron".
     '''
 
@@ -60,6 +73,15 @@ def ej2():
     nombres = ['Tamara', 'Marcelo', 'Martin', 'Juan', 'Alberto', 'Exequiel',
                'Alejandro', 'Leonel', 'Antonio', 'Omar', 'Antonia', 'Amalia',
                'Daniela', 'Sofia', 'Celeste', 'Ramon', 'Jorgelina', 'Anabela']
+
+
+    for x in nombres:
+        primera_letra = x [0]
+        if primera_letra == "T":
+            print(x)
+
+    nombres_filtrados = (x for x in nombres if x[0] == "T")  
+    print(nombres_filtrados)    
 
     # Se espera obtener:
     # ['Tamara', 'Juan', 'Alberto'......]
@@ -74,6 +96,8 @@ def ej3():
 
     # Conjunto de valores "X" en un array
     x = np.arange(0, 2*np.pi, 0.1)
+    y_nump = np.sin(x)
+    
 
     # Utilizar la función np.sin para someter cada valor de "X",
     # obtenga el array "y_nump" que tenga los resultados
@@ -84,6 +108,8 @@ def ej3():
 
     # Conjunto de valores "X" en una lista
     x = list(np.arange(0, 2*np.pi, 0.1))
+    y_list = [math.sin(x) for x in x]
+   
 
     # Utilizar comprensión de listas para obtener la lista
     # "y_list" que tenga todos los valores obtenidos como resultado
@@ -152,7 +178,7 @@ def ej5():
 if __name__ == '__main__':
     print("Ejercicios de práctica")
     # ej1()
-    # ej2()
+    ej2()
     # ej3()
     # ej4()
     # ej5()
