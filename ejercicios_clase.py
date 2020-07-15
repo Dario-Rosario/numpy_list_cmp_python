@@ -137,7 +137,7 @@ def ej4():
     # que no son números, utilizar condicionales para detectarlos
     # reemplazar dicho str "no numérico" por 0
     list_numeros_str = ['5', '-2', '3', '', '7', 'NaN']
-    lista_numeros_int = [int(x) for x in list_numeros_str if x.get("x",0)]
+    lista_numeros_int = [int(x) if x.lstrip("+-").isdigit() is True else 0 for x in list_numeros_str]
     print(lista_numeros_int)
 
     # lista_numeros_int = [.....]
